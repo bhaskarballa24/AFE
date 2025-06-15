@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="icon" href="../Aditya_Food_Express/images/logo2.png" type="image/png" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #000;
+      background-image: url('../Aditya_Food_Express/images/s1.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #f4c861;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      backdrop-filter: blur(10px);
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      font-size: 40px;
+      font-weight: bold;
+      border-bottom: 2px solid #f4c861;
+    }
+
+    .contact-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 30px;
+      border: 2px solid #f4c861;
+      border-radius: 16px;
+      box-shadow: 0 0 20px #f4c86155;
+    }
+
+    .contact-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .contact-container label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .contact-container input,
+    .contact-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+    }
+
+    .contact-container textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .contact-container button {
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      background-color: #f4c861;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #000;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-container button:hover {
+      background-color: #ffe28a;
+    }
+
+    .thank-you {
+      text-align: center;
+      margin-top: 20px;
+      display: none;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    @media (max-width: 480px) {
+      header { font-size: 30px; padding: 30px 10px 10px; }
+      .contact-container { margin: 20px; padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>Contact Us</header>
+
+  <div class="contact-container">
+    <h2>We'd love to hear from you!</h2>
+    <form id="contact-form" onsubmit="handleSubmit(event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="thank-you" id="thank-you-message">
+      🎉 Thank you for reaching out! We’ll get back to you soon.
+    </div>
+  </div>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+
+      // Simple placeholder action
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('thank-you-message').style.display = 'block';
+
+      // In real app, you'd POST data to a server here
+    }
+  </script>
+</body>
+</html>
